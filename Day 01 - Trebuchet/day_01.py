@@ -1,18 +1,18 @@
 from typing import List
 
 
-def find_digits(string: str) -> List[int]:
-    digits = []
+def find_decimals(string: str) -> List[int]:
+    decimals = []
     for character in string:
-        if character.isdigit():
-            digits.append(int(character))
-    return digits
+        if character.isdecimal():
+            decimals.append(int(character))
+    return decimals
 
 
 def sum_of_calibration_values(lines: List[str]) -> int:
     total = 0
     for line in lines:
-        line_digits = find_digits(line.strip())
+        line_digits = find_decimals(line.strip())
         calibration_value = int(f"{line_digits[0]}{line_digits[-1]}")
         total += calibration_value
     return total
